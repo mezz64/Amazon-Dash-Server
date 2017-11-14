@@ -8,5 +8,4 @@ WORKDIR /usr/src/app
 COPY . .
 
 # Start server
-RUN chmod +x /usr/src/app/dockerStart.sh
 CMD [ "python", "dash_server.py" ]
