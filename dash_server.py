@@ -14,6 +14,7 @@ class HTTPServer_RequestHandler(BaseHTTPRequestHandler):
 
         # Send response status code
         self.send_response(200)
+        print('GET request handled.')
 
         # Send headers
         #self.send_header('Content-type','text/html')
@@ -27,9 +28,9 @@ def run():
 
     # Server settings
     # Choose port 8080, for port 80, which is normally used for a http server, you need root access
-    server_address = ('', 443)
+    server_address = ('0.0.0.0', 443)
     httpd = HTTPServer(server_address, HTTPServer_RequestHandler)
-    httpd.socket = ssl.wrap_socket(httpd.socket, certfile='cert.pem', server_side=True)
+    httpd.socket = ssl.wrap_socket(httpd.socket, certfile='cert2.pem', server_side=True)
     print('running server...')
     httpd.serve_forever()
 
