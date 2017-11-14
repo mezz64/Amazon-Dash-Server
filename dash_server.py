@@ -6,10 +6,10 @@ import BaseHTTPServer, SimpleHTTPServer, ssl
 
 class MyHTTPHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
     def do_GET(s):
-	print 'GET', s.path
+	print('GET: ' + s.path)
 
     def do_POST(s):
-	print 'POST', s.path
+	print('POST: ' + s.path)
 
 if __name__ == "__main__":
     # Create the server, binding to localhost on port 443
