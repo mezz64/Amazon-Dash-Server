@@ -14,11 +14,20 @@ class HTTPServer_RequestHandler(BaseHTTPRequestHandler):
 
         # Send response status code
         self.send_response(200)
-        print('GET request handled.')
+        print('GET request handled: ' + self.path)
 
         # Send headers
         #self.send_header('Content-type','text/html')
         #self.end_headers()
+        return
+
+    def do_POST(self):
+        """Handle POST."""
+
+        # Send response status code
+        self.send_response(200)
+        print('Post request handled: ' + self.path)
+
         return
 
 

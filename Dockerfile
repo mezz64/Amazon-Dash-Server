@@ -8,4 +8,4 @@ WORKDIR /usr/src/app
 COPY . .
 
 # Start server
-CMD [ "python", "dash_server.py" ]
+CMD [ "python", "-u", "dash_server.py" ]
